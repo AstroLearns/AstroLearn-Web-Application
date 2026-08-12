@@ -1,11 +1,18 @@
-﻿/* ==============================
-   ASTROLEARN GLOBAL DESIGN
-============================== */
+﻿
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html,
@@ -16,40 +23,46 @@ body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #050816;
+    background: #05070d;
     color: #ffffff;
 }
 
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
 
 
-/* ==============================
-          NAVIGATION
-============================== */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .astro-navbar {
     width: 100%;
-    height: 78px;
+    min-height: 78px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 8%;
-    background: #070b19;
-    border-bottom: 1px solid #252b42;
+    background: #05070d;
+    border-bottom: 1px solid #252a34;
+    position: relative;
+    z-index: 100;
 }
-
 
 .astro-logo a {
-    text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
 }
-
 
 .logo-icon {
-    margin-right: 7px;
+    margin-right: 8px;
 }
-
 
 .astro-menu {
     display: flex;
@@ -57,82 +70,112 @@ body {
     gap: 28px;
 }
 
-
     .astro-menu a {
-        color: #c2c5d1;
-        text-decoration: none;
+        color: #d1d5dc;
         font-size: 15px;
+        text-decoration: none;
         transition: 0.3s;
     }
 
-
         .astro-menu a:hover {
-            color: #8d80ff;
+            color: #ff6b1a;
         }
 
-
 .login-nav-button {
-    background: #6855df;
-    color: white !important;
     padding: 11px 22px;
-    border-radius: 7px;
+    background: transparent;
+    border: 1px solid #ff6b1a;
+    border-radius: 8px;
+    color: #ff6b1a !important;
+    transition: 0.3s;
 }
 
-
     .login-nav-button:hover {
-        background: #806ff0;
+        background: #ff6b1a;
+        color: #ffffff !important;
     }
 
 
+/* =========================================================
+   COMMON COMPONENTS
+========================================================= */
 
-/* ==============================
-             HOME
-============================== */
+.mini-title {
+    color: #ff6b1a;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient( 135deg, #ff7a18, #e95017 );
+    color: #ffffff;
+    border: 1px solid #ff6b1a;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .primary-btn:hover {
+        transform: translateY(-2px);
+        background: linear-gradient( 135deg, #ff8b32, #f15b1b );
+        color: #ffffff;
+        box-shadow: 0 10px 30px rgba(255, 107, 26, 0.25);
+    }
+
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 28px;
+    color: #ffffff;
+    border: 1px solid #505867;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+    .secondary-btn:hover {
+        color: #ff6b1a;
+        border-color: #ff6b1a;
+        background: rgba(255, 107, 26, 0.05);
+    }
+
+
+/* =========================================================
+   HOME HERO
+========================================================= */
 
 .hero-section {
     min-height: 620px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 80px 10%;
-    background: radial-gradient( circle at 78% 40%, #3a2864 0%, transparent 28% ), radial-gradient( circle at 15% 25%, #152453 0%, transparent 32% ), #050816;
+    background: radial-gradient( circle at 78% 45%, rgba(255, 95, 20, 0.13), transparent 28% ), radial-gradient( circle at 15% 25%, rgba(26, 43, 76, 0.55), transparent 32% ), linear-gradient( 135deg, #070a12, #090b12 60%, #100a08 );
 }
-
 
 .hero-text {
     width: 58%;
 }
 
-
-.mini-title {
-    color: #8d7cff;
-    font-size: 13px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-
-.hero-text h1 {
-    font-size: 62px;
-    line-height: 1.15;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
-
-
-    .hero-text h1 span {
-        color: #8979ff;
+    .hero-text h1 {
+        font-size: 62px;
+        line-height: 1.15;
+        margin-bottom: 25px;
+        color: #ffffff;
     }
 
+        .hero-text h1 span {
+            color: #ff6b1a;
+        }
 
 .hero-description {
     max-width: 600px;
-    color: #adb2c4;
+    color: #aeb5c1;
     font-size: 18px;
     line-height: 1.7;
 }
-
 
 .hero-buttons {
     display: flex;
@@ -140,448 +183,440 @@ body {
     margin-top: 35px;
 }
 
-
-.primary-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #6956e4;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-
-    .primary-btn:hover {
-        background: #8271ef;
-        color: white;
-    }
-
-
-.secondary-btn {
-    display: inline-block;
-    padding: 13px 28px;
-    border: 1px solid #575e76;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-}
-
-
-    .secondary-btn:hover {
-        border-color: #8171ed;
-        color: #9a8eff;
-    }
-
-
 .hero-image {
     width: 42%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .planet {
-    font-size: 220px;
-    filter: drop-shadow( 0 0 55px #6f58cf );
+    font-size: 200px;
+    filter: drop-shadow( 0 0 45px rgba(255, 91, 20, 0.25) );
+}
+
+.mars-image,
+.mars-main-image {
+    width: 470px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow( 0 0 35px rgba(255, 91, 20, 0.22) );
+    animation: marsFloat 5s ease-in-out infinite;
+}
+
+@keyframes marsFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 
-
-/* ==============================
-            FEATURES
-============================== */
+/* =========================================================
+   HOME FEATURES
+========================================================= */
 
 .features-section {
-    padding: 90px 10%;
-    background: #090e1f;
+    padding: 85px 10%;
+    background: #080c16;
     text-align: center;
 }
-
 
     .features-section h2 {
         font-size: 38px;
         margin-bottom: 12px;
     }
 
-
 .section-description {
-    color: #a3a8ba;
-    margin-bottom: 50px;
+    color: #a4aab6;
+    margin-bottom: 45px;
 }
-
 
 .feature-grid {
     display: flex;
     gap: 25px;
 }
 
-
 .feature-card {
     flex: 1;
+    padding: 34px;
     text-align: left;
-    padding: 35px;
-    background: #11172b;
-    border: 1px solid #2a314c;
+    background: linear-gradient( 145deg, #111722, #0c111a );
+    border: 1px solid #29313e;
     border-radius: 15px;
     transition: 0.3s;
 }
 
-
     .feature-card:hover {
-        transform: translateY(-8px);
-        border-color: #715fe5;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        transform: translateY(-7px);
+        border-color: #d95c1c;
+        box-shadow: 0 15px 40px rgba(255, 91, 20, 0.10);
     }
 
-
 .feature-icon {
-    font-size: 42px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
-
 
 .feature-card h3 {
-    margin-bottom: 15px;
-    font-size: 22px;
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 14px;
 }
-
 
 .feature-card p {
-    color: #a6abbc;
+    color: #a4abb7;
     line-height: 1.7;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
-
 .feature-card a {
-    text-decoration: none;
-    color: #9081ff;
+    color: #ff721c;
     font-weight: 600;
 }
 
+    .feature-card a:hover {
+        color: #ff9a52;
+    }
 
 
-/* ==============================
-          JOURNEY CTA
-============================== */
+/* =========================================================
+   HOME CTA
+========================================================= */
 
 .journey-section {
-    padding: 90px 20px;
+    padding: 75px 20px;
     text-align: center;
-    background: #11162c;
+    background: radial-gradient( circle at center, rgba(255, 91, 20, 0.10), transparent 42% ), #090b10;
 }
 
-
     .journey-section h2 {
-        font-size: 37px;
+        font-size: 36px;
         margin-bottom: 15px;
     }
 
-
     .journey-section p {
-        color: #a8adbd;
-        margin-bottom: 30px;
-        font-size: 17px;
+        color: #aeb3bd;
+        font-size: 16px;
+        margin-bottom: 28px;
     }
 
 
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
 
-/* ==============================
-            FOOTER
-============================== */
-
-.astro-footer {
-    padding: 45px 10% 25px;
-    text-align: center;
-    background: #030610;
-    border-top: 1px solid #1c2135;
-    color: #969caf;
-}
-
-
-.footer-top h3 {
-    color: white;
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-
-
-.footer-links {
+.login-page {
+    min-height: 720px;
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin: 25px 0;
+    align-items: center;
+    padding: 70px 20px;
+    background: radial-gradient( circle at center, rgba(255, 91, 20, 0.10), transparent 35% ), #060911;
 }
 
+.login-card {
+    width: 460px;
+    padding: 46px;
+    background: #101521;
+    border: 1px solid #303642;
+    border-radius: 18px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
 
-    .footer-links a {
-        color: #9ea4b5;
-        text-decoration: none;
+.login-icon {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.login-mini-title {
+    text-align: center;
+    color: #ff6b1a;
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.login-subtitle {
+    text-align: center;
+    color: #a8adb8;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.login-field {
+    margin-bottom: 22px;
+}
+
+    .login-field label {
+        display: block;
+        margin-bottom: 8px;
+        color: #ffffff;
     }
 
+.login-input {
+    width: 100%;
+    padding: 14px;
+    background: #080d17;
+    border: 1px solid #343b49;
+    border-radius: 8px;
+    color: #ffffff;
+    outline: none;
+}
 
-        .footer-links a:hover {
-            color: #8e7eff;
-        }
+    .login-input::placeholder {
+        color: #7b8190;
+    }
 
+    .login-input:focus {
+        border-color: #ff6b1a;
+        box-shadow: 0 0 0 3px rgba(255, 107, 26, 0.10);
+    }
 
-.footer-bottom {
-    padding-top: 20px;
-    border-top: 1px solid #1c2132;
+.login-options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
     font-size: 13px;
+    color: #a8adb7;
+}
+
+.remember-area {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.login-options-row a {
+    color: #ff721c;
+}
+
+    .login-options-row a:hover {
+        color: #ff9a52;
+    }
+
+.login-submit-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient( 135deg, #ff7a18, #e95017 );
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .login-submit-button:hover {
+        background: linear-gradient( 135deg, #ff8b32, #f15b1b );
+    }
+
+.register-line {
+    margin-top: 25px;
+    text-align: center;
+    color: #a7acb7;
+}
+
+    .register-line a {
+        color: #ff721c;
+        font-weight: 600;
+    }
+
+.validation-message {
+    display: block;
+    margin-top: 7px;
+    color: #ff7b8a;
+    font-size: 12px;
+}
+
+.login-message {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.success-message {
+    color: #75e6a5;
+}
+
+.error-message {
+    color: #ff7b8a;
 }
 
 
-
-/* ==============================
-          RESPONSIVE
-============================== */
-
-@media (max-width: 900px) {
-
-    .astro-navbar {
-        padding: 0 4%;
-    }
-
-
-    .astro-menu {
-        gap: 12px;
-        font-size: 13px;
-    }
-
-
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-
-    .hero-text,
-    .hero-image {
-        width: 100%;
-    }
-
-
-        .hero-text h1 {
-            font-size: 44px;
-        }
-
-
-    .hero-description {
-        margin: auto;
-    }
-
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-
-    .planet {
-        margin-top: 50px;
-        font-size: 135px;
-    }
-
-
-    .feature-grid {
-        flex-direction: column;
-    }
-}
-
-
-/* ==========================================
-              ABOUT PAGE
-========================================== */
-
-
-/* ABOUT HERO */
+/* =========================================================
+   ABOUT HERO
+========================================================= */
 
 .about-hero {
-    min-height: 470px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 75px 20px;
     text-align: center;
-    padding: 80px 20px;
-    background: radial-gradient( circle at center, #33245c 0%, transparent 35% ), radial-gradient( circle at 15% 30%, #14234e 0%, transparent 30% ), #050816;
+    background: radial-gradient( circle at center, rgba(255, 91, 20, 0.11), transparent 38% ), #060911;
 }
 
-
     .about-hero h1 {
-        font-size: 55px;
-        line-height: 1.15;
-        margin-bottom: 22px;
+        font-size: 52px;
+        margin-bottom: 20px;
     }
 
-
         .about-hero h1 span {
-            color: #8979ff;
+            color: #ff6b1a;
         }
-
 
 .about-hero-text {
     max-width: 650px;
-    color: #abb0c1;
+    color: #adb2bc;
     font-size: 17px;
     line-height: 1.7;
 }
 
 
-
-/* ==========================================
-          WHAT IS ASTROLEARN
-========================================== */
+/* =========================================================
+   ABOUT MAIN
+========================================================= */
 
 .about-main {
     display: flex;
     align-items: center;
-    gap: 80px;
-    padding: 100px 12%;
-    background: #080d1d;
+    gap: 70px;
+    padding: 90px 12%;
+    background: #080c16;
 }
-
 
 .about-main-text {
     width: 60%;
 }
 
-
     .about-main-text h2 {
-        font-size: 40px;
-        margin-bottom: 25px;
+        font-size: 38px;
+        margin-bottom: 22px;
     }
 
-
-    .about-main-text > p:not(.mini-title) {
-        color: #a8adbd;
-        font-size: 16px;
+    .about-main-text p {
+        color: #a9afb9;
         line-height: 1.8;
-        margin-bottom: 18px;
+        margin-bottom: 17px;
     }
-
 
 .about-visual-card {
     width: 40%;
-    padding: 50px 40px;
+    padding: 45px;
     text-align: center;
-    background: linear-gradient( 145deg, #12192f, #0d1327 );
-    border: 1px solid #2b3451;
-    border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    background: linear-gradient( 145deg, #111722, #0c111a );
+    border: 1px solid #2c3440;
+    border-radius: 16px;
+    transition: 0.3s;
 }
 
+    .about-visual-card:hover {
+        transform: translateY(-5px);
+        border-color: #d95c1c;
+        box-shadow: 0 15px 40px rgba(255, 91, 20, 0.10);
+    }
 
 .about-telescope {
-    font-size: 90px;
-    margin-bottom: 25px;
-    filter: drop-shadow( 0 0 25px rgba(126, 104, 238, 0.35) );
+    font-size: 80px;
+    margin-bottom: 20px;
 }
 
-
 .about-visual-card h3 {
-    font-size: 24px;
     margin-bottom: 15px;
 }
 
-
 .about-visual-card p {
-    color: #a5aabc;
+    color: #a5abb6;
     line-height: 1.7;
 }
 
 
-
-/* ==========================================
-                MISSION
-========================================== */
+/* =========================================================
+   ABOUT MISSION
+========================================================= */
 
 .about-mission {
-    padding: 100px 10%;
-    background: #050816;
+    padding: 90px 10%;
+    background: #060911;
 }
-
 
 .mission-heading {
-    text-align: center;
     max-width: 700px;
-    margin: 0 auto 55px;
+    margin: 0 auto 50px;
+    text-align: center;
 }
 
-
     .mission-heading h2 {
-        font-size: 39px;
+        font-size: 38px;
         margin-bottom: 15px;
     }
 
-
-    .mission-heading > p:not(.mini-title) {
-        color: #a7acbd;
+    .mission-heading p {
+        color: #a7adb7;
         line-height: 1.7;
     }
-
 
 .about-mission-grid {
     display: flex;
     gap: 25px;
 }
 
-
 .about-mission-card {
     flex: 1;
-    padding: 38px;
-    background: #10162b;
-    border: 1px solid #29314c;
+    padding: 35px;
+    background: linear-gradient( 145deg, #111722, #0c111a );
+    border: 1px solid #2c3440;
     border-radius: 15px;
     transition: 0.3s;
 }
 
-
     .about-mission-card:hover {
-        transform: translateY(-7px);
-        border-color: #715fe5;
+        transform: translateY(-6px);
+        border-color: #d95c1c;
+        box-shadow: 0 15px 35px rgba(255, 91, 20, 0.10);
     }
-
 
 .mission-icon {
     font-size: 40px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
-
 
 .about-mission-card h3 {
-    font-size: 21px;
-    margin-bottom: 14px;
+    margin-bottom: 13px;
 }
 
-
 .about-mission-card p {
-    color: #a4aabb;
+    color: #a6acb7;
     line-height: 1.7;
 }
 
 
-
-/* ==========================================
-               AUDIENCE
-========================================== */
+/* =========================================================
+   AUDIENCE
+========================================================= */
 
 .audience-section {
-    padding: 100px 12%;
-    background: #090e1f;
+    padding: 90px 12%;
+    background: #080c16;
 }
-
 
 .audience-heading {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
-
-
-    .audience-heading h2 {
-        font-size: 38px;
-    }
-
 
 .audience-grid {
     max-width: 1050px;
@@ -591,107 +626,318 @@ body {
     gap: 18px;
 }
 
-
 .audience-card {
     display: flex;
     align-items: center;
     gap: 25px;
-    padding: 28px 32px;
-    background: #10162b;
-    border: 1px solid #29314c;
+    padding: 28px;
+    background: linear-gradient( 145deg, #111722, #0c111a );
+    border: 1px solid #2c3440;
     border-radius: 14px;
     transition: 0.3s;
 }
 
-
     .audience-card:hover {
-        border-color: #6d5ce0;
         transform: translateX(5px);
+        border-color: #d95c1c;
     }
-
 
 .audience-icon {
     min-width: 65px;
-    font-size: 38px;
     text-align: center;
+    font-size: 38px;
 }
-
-
-.audience-card h3 {
-    margin-bottom: 8px;
-    font-size: 20px;
-}
-
 
 .audience-card p {
-    color: #a4aabb;
-    line-height: 1.65;
-    margin: 0;
+    color: #a6acb7;
+    line-height: 1.7;
 }
 
 
-
-/* ==========================================
-              ABOUT CTA
-========================================== */
+/* =========================================================
+   ABOUT CTA
+========================================================= */
 
 .about-cta {
-    padding: 100px 20px;
+    padding: 75px 20px;
     text-align: center;
-    background: radial-gradient( circle at center, #25204b 0%, transparent 40% ), #080c1a;
+    background: radial-gradient( circle at center, rgba(255, 91, 20, 0.10), transparent 42% ), #090b10;
 }
 
+    .about-cta h2 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
 
-.about-cta-icon {
-    font-size: 60px;
-    margin-bottom: 20px;
+    .about-cta p {
+        color: #aeb3bd;
+        margin-bottom: 28px;
+    }
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard-page {
+    min-height: calc(100vh - 78px);
+    padding: 70px 8%;
+    background: radial-gradient( circle at 50% 0%, rgba(255, 91, 20, 0.10), transparent 32% ), #070a11;
 }
 
+.dashboard-header {
+    max-width: 1200px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
 
-.about-cta h2 {
+    .dashboard-header .mini-title {
+        color: #ff6b1a;
+    }
+
+    .dashboard-header h1 {
+        font-size: 42px;
+        margin: 12px 0;
+        color: #ffffff;
+    }
+
+.dashboard-welcome {
+    display: block;
+    color: #aab0bb;
+}
+
+.dashboard-grid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.dashboard-card {
+    display: block;
+    min-height: 200px;
+    padding: 30px;
+    background: linear-gradient( 145deg, #111722, #0c111a );
+    border: 1px solid #2d3440;
+    border-radius: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .dashboard-card:hover {
+        transform: translateY(-6px);
+        border-color: #d95c1c;
+        box-shadow: 0 15px 35px rgba(255, 91, 20, 0.13);
+        color: #ffffff;
+    }
+
+.dashboard-icon {
     font-size: 38px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+}
+
+.dashboard-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.dashboard-card p {
+    color: #a4abb7;
+    line-height: 1.7;
+}
+
+.dashboard-logout {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.logout-button {
+    padding: 13px 38px;
+    background: transparent;
+    border: 1px solid #ff6818;
+    border-radius: 8px;
+    color: #ff6818;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .logout-button:hover {
+        background: #ff6818;
+        color: #ffffff;
+    }
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.astro-footer {
+    padding: 42px 10% 24px;
+    text-align: center;
+    background: #04060b;
+    border-top: 1px solid #242832;
+    color: #9299a6;
+}
+
+.footer-top h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 24px 0;
+}
+
+    .footer-links a {
+        color: #aeb4be;
+    }
+
+        .footer-links a:hover {
+            color: #ff6b1a;
+        }
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #20242d;
+    font-size: 13px;
 }
 
 
-.about-cta p {
-    color: #a7acbd;
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-
-
-
-/* ==========================================
-          ABOUT RESPONSIVE
-========================================== */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 900px) {
 
-    .about-hero h1 {
-        font-size: 42px;
+    .astro-navbar {
+        padding: 0 5%;
     }
 
+    .astro-menu {
+        gap: 14px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 7%;
+    }
+
+    .hero-text,
+    .hero-image {
+        width: 100%;
+    }
+
+        .hero-text h1 {
+            font-size: 44px;
+        }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-top: 50px;
+    }
+
+    .mars-image,
+    .mars-main-image {
+        width: 350px;
+    }
+
+    .feature-grid,
+    .about-mission-grid {
+        flex-direction: column;
+    }
 
     .about-main {
         flex-direction: column;
-        gap: 45px;
-        padding: 70px 8%;
     }
-
 
     .about-main-text,
     .about-visual-card {
         width: 100%;
     }
 
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 
-    .about-mission-grid {
+
+@media (max-width: 600px) {
+
+    .astro-navbar {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 5%;
+    }
+
+    .astro-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
         flex-direction: column;
     }
 
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        text-align: center;
+    }
 
-    .about-cta h2 {
-        font-size: 30px;
+    .login-card {
+        width: 100%;
+        padding: 35px 25px;
+    }
+
+    .login-options-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-page {
+        padding: 50px 20px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 32px;
+    }
+
+    .audience-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mars-image,
+    .mars-main-image {
+        width: 280px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
     }
 }

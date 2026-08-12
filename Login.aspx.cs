@@ -18,13 +18,17 @@ namespace WebApplicationfinal
             if (email == "student@astrolearn.com" &&
                 password == "12345")
             {
-                lblMessage.Text = "Login successful!";
-                lblMessage.CssClass = "login-message success-message";
+                Session["UserEmail"] = email;
+
+                Response.Redirect("Dashboard.aspx");
             }
             else
             {
-                lblMessage.Text = "Invalid email or password.";
-                lblMessage.CssClass = "login-message error-message";
+                lblMessage.Text =
+                    "Invalid email or password.";
+
+                lblMessage.CssClass =
+                    "login-message error-message";
             }
         }
     }

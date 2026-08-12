@@ -35,9 +35,7 @@
 
         <div class="hero-image">
 
-            <div class="planet">
-                🪐
-            </div>
+            <img src="mars.png" alt="Planet Mars" width="500" height="320"/>
 
         </div>
 
