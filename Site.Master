@@ -148,12 +148,22 @@
                 About
             </a>
 
-            <a href="Login.aspx"
-               class="login-nav-button">
+           <asp:LinkButton
+    ID="btnNavLogout"
+    runat="server"
+    CssClass="login-nav-button"
+    OnClick="btnNavLogout_Click"
+    Visible="false">
+    Logout
+</asp:LinkButton>
 
-                Login
-
-            </a>
+<asp:HyperLink
+    ID="lnkNavLogin"
+    runat="server"
+    NavigateUrl="~/Login.aspx"
+    CssClass="login-nav-button">
+    Login
+</asp:HyperLink>
 
         </nav>
 

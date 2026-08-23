@@ -148,16 +148,6 @@
         </div>
 
 
-        <div class="dashboard-logout">
-
-            <asp:Button
-                ID="btnLogout"
-                runat="server"
-                Text="Logout"
-                CssClass="logout-button"
-                OnClick="btnLogout_Click" />
-
-        </div>
 
     </section>
 
